@@ -5,3 +5,10 @@ body {
 #menu-btn {
     background-color: #00af87;
 }
+
+.center {
+    margin: 0 auto;
+    width: 50%;
+    border: 3px solid #00af87;
+    padding: 10px;
+}
