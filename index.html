@@ -13,27 +13,7 @@
   <body>
       
       
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '{your-app-id}',
-          cookie     : true,
-          xfbml      : true,
-          version    : '{latest-api-version}'
-        });
-          
-        FB.AppEvents.logPageView();   
-          
-      };
-    
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "https://connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
+  
     
     <!--  <div id="fb-root"></div>-->
     <!--<script>(function(d, s, id) {-->
@@ -45,21 +25,53 @@
     <!--}(document, 'script', 'facebook-jssdk'));</script>-->
     
   <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
-      <button type="submit" onclick="getData()">Search</button>
-    
-    <fb:login-button 
-      scope="public_profile,email"
-      onlogin="checkLoginState();">
-    </fb:login-button>
-      <p id="data"></p>
-    </div>
+            <div id="fb-root"></div>
+
+        <script>
+        window.fbAsyncInit = function() {
+                FB.init({
+                appId: 2165015330392770,
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+        };
+
+        // Load the SDK asynchronously
+        (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+        }(document));
+
+        function login() {
+            FB.login(function(response) {
+
+            // handle the response
+            console.log("Response goes here!");
+            //change scope request items here
+            }, {scope: 'public_profile,email'});            
+        }
+
+        function logout() {
+            FB.logout(function(response) {
+              // user is now logged out
+            });
+        }
+        //
+        var status = FB.getLoginStatus();
+
+        console.log(status);
+
+        </script>
+
+        <button onclick="javascript:login();">Login Facebook</button>
+
+        <br>
+
+        <button onclick="javascript:logout();">Logout from Facebook</button>
   </section>
   </body>
 </html>
