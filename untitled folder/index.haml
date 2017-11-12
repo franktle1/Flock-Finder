@@ -1,0 +1,22 @@
+.status
+.content
+  -3.times do |id|
+    .card{ :id => "card-#{id}"}
+      .card-title
+        %span.title
+          Lorem Ipsum
+        %span.likes
+          =rand(100)
+      .card-content
+        %p Lorem Ipsum Dolor Sit Amet
+      .card-footer
+        - rand(5).times do |i|
+          %span tag #{i}
+          
+.action
+  %span.disLike
+    %i.fa.fa-times.fa-2x
+  %span
+    %i.fa.fa-info.fa-2x
+  %span.like
+    %i.fa.fa-heart.fa-2x
