@@ -1,3 +1,27 @@
+$(".like").click(function (){
+  $("#card-0").addClass("yes");
+   $(".status").addClass("statusYes");
+  window.setTimeout(function () {
+    $("#card-0").remove();
+    $(".status").removeClass("statusYes");
+  }, 600);
+  
+  $("#card-1").attr("id","card-0");
+  $("#card-2").attr("id","card-1");
+   $("#card-3").attr("id","card-2");
+});
+
+$(".disLike").click(function (){
+  $("#card-0").addClass("no");
+  $(".status").addClass("statusNo");
+  window.setTimeout(function () {
+    $(".status").removeClass("statusNo");
+    $("#card-0").remove();
+  }, 600);
+  $("#card-1").attr("id","card-0");
+  $("#card-2").attr("id","card-1");
+   $("#card-3").attr("id","card-2");
+});
 var data = 
 [
   {
@@ -556,6 +580,7 @@ var data =
     ]
   }
 ];
+
 Set.prototype.intersection = function(setB) {
     var intersection = new Set();
     for (var elem of setB) {
@@ -574,6 +599,9 @@ function getData(link) {
   return locationdata;
 }
 
+function showCards(){
+  document.getElementById("cards").style.cssText = 'display:block;'
+}
 // function matchtoFake(city) {
 //   for (var i = 0; i < data.length; i++) {
 //     if (data[i].location.split(",")[0] === city) {
