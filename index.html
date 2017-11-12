@@ -6,16 +6,18 @@
     <title>Trip Advisor Thing</title>
      <meta charset="utf-8" />
     <title>Semantic UI CDN</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
     <link rel="stylesheet" href="app.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="app.js"></script>
   </head>
-  <body>
-    
-      <button id="menu-btn" class="ui green button" onclick="getData()">Find Friendly Locals</button>
+  <body id="animate-area">
+
+    <h1>Flock Finder App</h1>    
+      <button id="menu-btn" class="button1" onclick="getData()"> Enter Here </button>
       <p id="data"></p>
 
       
@@ -73,11 +75,21 @@
 
         </script>
 
-        <button onclick="javascript:login();">Login Facebook</button>
+        
+            <div class="center">
+            <button class="button" style="vertical-align:middle" onclick="javascript:login();"><span>Login Facebook</span></button> 
+            <br>
+            
+            <button class="button" style="vertical-align:middle" onclick="javascript:logout();"><span>Logout Facebook</span></button>
+            </div>
+        
 
-        <br>
+        
 
-        <button onclick="javascript:logout();">Logout from Facebook</button>
+        
+        
+
+
   </section>
   </body>
 </html>
