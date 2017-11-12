@@ -1,5 +1,5 @@
 var link = "https://api.tripadvisor.com/api/partner/2.0/location/155507?key=e8fe9217-3f08-4ed1-8edf-87adc35c424f"
-
+var user;
 Set.prototype.intersection = function(setB) {
     var intersection = new Set();
     for (var elem of setB) {
@@ -17,6 +17,13 @@ function getData() {
   document.getElementById("data").innerHTML = locationdata;
 }
 
+function matchtoFake(city) {
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].location.split(",")[0] === city) {
+      user = data[i];
+    }
+  }
+}
 
 function generateMatches() {
   var matches = [];
@@ -30,6 +37,11 @@ function generateMatches() {
       var anb = base_interests.intersection(interests);
       if (anb) {
         console.log(data[i].name,anb);
+        // var match = {
+        //   user: data[i],
+        //   shared_interests: anb;
+        // }
+        }
         matches.push(data[i]);
       }
     }
@@ -37,6 +49,12 @@ function generateMatches() {
   return matches;
 }
 
+function findAttractions(matches) {
+  var base_interests = new Set(user.favoriteActivities);
+  for (var i=0;i < matches.length;i++) {
+    var anb = base_interests.intersection(interests);
+  }
+}
 var data = 
 [
   {
